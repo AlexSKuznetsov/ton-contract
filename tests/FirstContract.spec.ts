@@ -74,4 +74,16 @@ describe('FirstContract', () => {
 
         expect(counterBefore).toBeLessThan(counterAfter);
     });
+
+    it('should return counter', async () => {
+        const counter = await firstContract.getCounter();
+        console.log('counter - ', counter);
+        expect(counter).toBe(0n);
+    });
+
+    it('should return id', async () => {
+        const id = await firstContract.getId();
+        console.log('id - ', id);
+        expect(id).toBe(1000n);
+    });
 });

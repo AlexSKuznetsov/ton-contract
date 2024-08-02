@@ -10,7 +10,7 @@ contract FirstContract with Deployable {
 
     init (id: Int) {
       self.counter = 0;
-      self.id = 0;
+      self.id = id;
     }
 
     receive("increment") {
@@ -21,11 +21,11 @@ contract FirstContract with Deployable {
       self.counter += msg.amount;
     }
 
-    get fun counter():Int {
+    get fun counter(): Int {
       return self.counter;
     }
 
-    get fun id():Int {
+    get fun id(): Int {
       return self.id;
     }
 }
